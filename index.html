@@ -1,0 +1,80 @@
+<!--
+Copyright (c) IBM, Corp. and its affiliates.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>MyApplication</title>
+  <meta name="description" content="MyApplication description" />
+
+  <base href="/" />
+
+  <link rel="icon" href="images/favicon.ico" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <meta name="theme-color" content="#000000" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="MyApplication" />
+
+  <link rel="apple-touch-icon" href="images/manifest/icon-192x192.png" />
+
+  <link rel="canonical" href="/" />
+
+  <meta property="og:title" content="MyApplication" />
+  <meta property="og:description" content="MyApplication description" />
+  <meta property="og:image" content="/images/open-graph/cover.png" />
+  <meta property="og:image:alt" content="MyApplication logo" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:url" content="/" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+    media="print" onload="this.media='all'" />
+
+  <style>
+    html,
+    body,
+    app-index {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    noscript {
+      display: block;
+      margin: 1em;
+    }
+  </style>
+</head>
+
+<body dir="rtl">
+  <app-index></app-index>
+
+  <noscript>Please enable JavaScript to view this website.</noscript>
+
+  <script type="module" src="src/components/app-index.ts"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
