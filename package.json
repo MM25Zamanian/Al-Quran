@@ -32,7 +32,13 @@
     "types:check:tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@material/mwc-drawer": "^0.25.3",
+    "@material/mwc-icon": "^0.25.3",
+    "@material/mwc-icon-button": "^0.25.3",
+    "@material/mwc-list": "^0.25.3",
+    "@material/mwc-top-app-bar-fixed": "^0.25.3",
     "@vaadin/router": "^1.7.4",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
     "chroma.ts": "^1.0.10",
     "ionicons": "^6.0.0",
     "lit": "^2.0.2",

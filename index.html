@@ -6,7 +6,7 @@ LICENSE file in the root directory of this source tree.
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
@@ -40,10 +40,11 @@ LICENSE file in the root directory of this source tree.
   <meta property="og:image:height" content="512" />
   <meta property="og:url" content="/" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round&display=block" rel="stylesheet">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
     media="print" onload="this.media='all'" />
@@ -57,17 +58,25 @@ LICENSE file in the root directory of this source tree.
 
     body {
       margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     noscript {
       display: block;
       margin: 1em;
     }
+
+    :root {
+      --mdc-theme-primary: #127e3b;
+      /* --mdc-theme-surface: #02441b; */
+      --mdc-theme-on-primary: rgb(255, 255, 255);
+      --mdc-icon-font: 'Material Icons Round';
+      --mdc-typography-font-family: 'Roboto Light', 'Samim', sans-serif;
+    }
   </style>
 </head>
 
-<body dir="rtl">
+<body>
   <app-index></app-index>
 
   <noscript>Please enable JavaScript to view this website.</noscript>

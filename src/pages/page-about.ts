@@ -35,8 +35,8 @@ export class PageAbout extends PageElement {
 
   meta() {
     return {
-      title: 'About',
-      description: 'About page description',
+      title: 'درباره ما',
+      description: 'درباره ما',
     };
   }
 }
