@@ -3,10 +3,7 @@ export interface Route {
   path: string;
   name: string;
   icon: string | null;
-  label: {
-    fa: string | null;
-    en: string | null;
-  };
+  label: string | null;
   component: string;
   action: () => Promise<void>;
 }
@@ -16,11 +13,8 @@ export const routes: Route[] = [
     show: true,
     path: '/',
     name: 'home',
-    icon: 'home-outline',
-    label: {
-      fa: 'خانه',
-      en: 'home',
-    },
+    icon: 'home',
+    label: 'خانه',
     component: 'page-home',
     action: async () => {
       await import('../pages/page-home.js');
@@ -30,11 +24,8 @@ export const routes: Route[] = [
     show: true,
     path: '/about',
     name: 'about',
-    icon: 'information-circle-outline',
-    label: {
-      fa: 'درباره ما',
-      en: 'about us',
-    },
+    icon: 'info',
+    label: 'درباره ما',
     component: 'page-about',
     action: async () => {
       await import('../pages/page-about.js');
@@ -45,10 +36,7 @@ export const routes: Route[] = [
     path: '(.*)',
     name: 'not-found',
     icon: null,
-    label: {
-      fa: null,
-      en: null,
-    },
+    label: null,
     component: 'page-not-found',
     action: async () => {
       await import('../pages/page-not-found.js');
