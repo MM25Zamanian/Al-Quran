@@ -7,6 +7,8 @@ export default css`
     padding: 0;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+  }
+  *:not(mwc-*) {
     font-family: 'Roboto Light', 'Samim', sans-serif;
   }
   p {
