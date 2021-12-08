@@ -58,7 +58,7 @@ LICENSE file in the root directory of this source tree.
 
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Samim Normal', 'Samim FD', sans-serif;
     }
 
     noscript {
@@ -68,10 +68,32 @@ LICENSE file in the root directory of this source tree.
 
     :root {
       --mdc-theme-primary: #127e3b;
-      /* --mdc-theme-surface: #02441b; */
       --mdc-theme-on-primary: rgb(255, 255, 255);
       --mdc-icon-font: 'Material Icons Round';
-      --mdc-typography-font-family: 'Roboto Light', 'Samim', sans-serif;
+      --mdc-typography-font-family: 'Samim Normal', 'Samim FD', sans-serif;
+
+      --mdc-circular-progress-bar: #ffffff;
+
+      --mdc-circular-progress-bar-color-1: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-2: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-3: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-4: var(--mdc-circular-progress-bar);
+    }
+
+    @font-face {
+      font-family: 'Samim Normal';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('/fonts/Samim.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Samim FD';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('/fonts/Samim-FD.woff') format('woff');
     }
   </style>
 </head>
