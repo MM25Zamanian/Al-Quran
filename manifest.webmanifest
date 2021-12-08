@@ -1,11 +1,14 @@
 {
-  "name": "MyApplication",
-  "short_name": "MyApp",
-  "description": "MyApplication description",
-  "start_url": "/?utm_source=web_app_manifest",
+  "dir": "rtl",
+  "lang": "fa",
+  "name": "Al-Quran",
+  "short_name": "القرآن",
+  "description": "Quran app by Codinex",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#127e3b",
   "background_color": "#ffffff",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",

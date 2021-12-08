@@ -32,6 +32,7 @@
     "types:check:tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@material/mwc-circular-progress-four-color": "^0.25.3",
     "@material/mwc-drawer": "^0.25.3",
     "@material/mwc-icon": "^0.25.3",
     "@material/mwc-icon-button": "^0.25.3",

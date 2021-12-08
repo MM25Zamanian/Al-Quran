@@ -965,6 +965,19 @@
   dependencies:
     tslib "^2.1.0"
 
+"@material/circular-progress@=14.0.0-canary.261f2db59.0":
+  version "14.0.0-canary.261f2db59.0"
+  resolved "https://registry.yarnpkg.com/@material/circular-progress/-/circular-progress-14.0.0-canary.261f2db59.0.tgz#9de291e5e95746ff98146885d8a44d9fa1722e84"
+  integrity sha512-Gi6Ika8MEZQOT3Qei2NfTj+sRWxCDFjchPM7szNjIKgL2DyH03bHmodQFVcyBFiPWEcWMc/mqVYgGf/XJXs85w==
+  dependencies:
+    "@material/animation" "14.0.0-canary.261f2db59.0"
+    "@material/base" "14.0.0-canary.261f2db59.0"
+    "@material/feature-targeting" "14.0.0-canary.261f2db59.0"
+    "@material/progress-indicator" "14.0.0-canary.261f2db59.0"
+    "@material/rtl" "14.0.0-canary.261f2db59.0"
+    "@material/theme" "14.0.0-canary.261f2db59.0"
+    tslib "^2.1.0"
+
 "@material/density@14.0.0-canary.261f2db59.0":
   version "14.0.0-canary.261f2db59.0"
   resolved "https://registry.npmjs.org/@material/density/-/density-14.0.0-canary.261f2db59.0.tgz"
@@ -1054,6 +1067,29 @@
     lit "^2.0.0"
     tslib "^2.0.1"
 
+"@material/mwc-circular-progress-four-color@^0.25.3":
+  version "0.25.3"
+  resolved "https://registry.yarnpkg.com/@material/mwc-circular-progress-four-color/-/mwc-circular-progress-four-color-0.25.3.tgz#46fdd0052fa063a72f66ccfbb9ca601f0dc5ec5d"
+  integrity sha512-CEpZxvZnJaBJaBD/WeffbbQ1vWaqML0zmohVIebxfml9MIukzIT8nRFfBmWq89zlszJBhdH0mfDvk7jX47z0Vg==
+  dependencies:
+    "@material/circular-progress" "=14.0.0-canary.261f2db59.0"
+    "@material/mwc-base" "^0.25.3"
+    "@material/mwc-circular-progress" "^0.25.3"
+    "@material/theme" "=14.0.0-canary.261f2db59.0"
+    lit "^2.0.0"
+    tslib "^2.0.1"
+
+"@material/mwc-circular-progress@^0.25.3":
+  version "0.25.3"
+  resolved "https://registry.yarnpkg.com/@material/mwc-circular-progress/-/mwc-circular-progress-0.25.3.tgz#a1b62ab81cfad5a659ea249fc211061f68e9160b"
+  integrity sha512-ajgSzfdRfq0/sZg0Z5W/ZpgZwD8Ioj59m5ScCPXXdkRoVHf7+8lsD/2Fh4095GfoYE4PWSkXYVlWsQCx+aJbcA==
+  dependencies:
+    "@material/circular-progress" "=14.0.0-canary.261f2db59.0"
+    "@material/mwc-base" "^0.25.3"
+    "@material/theme" "=14.0.0-canary.261f2db59.0"
+    lit "^2.0.0"
+    tslib "^2.0.1"
+
 "@material/mwc-drawer@^0.25.3":
   version "0.25.3"
   resolved "https://registry.npmjs.org/@material/mwc-drawer/-/mwc-drawer-0.25.3.tgz"
@@ -1140,6 +1176,13 @@
     lit "^2.0.0"
     tslib "^2.0.1"
 
+"@material/progress-indicator@14.0.0-canary.261f2db59.0":
+  version "14.0.0-canary.261f2db59.0"
+  resolved "https://registry.yarnpkg.com/@material/progress-indicator/-/progress-indicator-14.0.0-canary.261f2db59.0.tgz#047bba48d6897f4d4015479897a8d5d6f7219421"
+  integrity sha512-qm+zUMvFYhHuVB2OdgWTO/Dv1hMFEdIT3loX5OJMpvQ66l6rez/3F7blwHkm6W4mfuxRS3zdDdYbP5QdFcuHuA==
+  dependencies:
+    tslib "^2.1.0"
+
 "@material/radio@=14.0.0-canary.261f2db59.0":
   version "14.0.0-canary.261f2db59.0"
   resolved "https://registry.yarnpkg.com/@material/radio/-/radio-14.0.0-canary.261f2db59.0.tgz#d3e663e39b300c9cd19e84e00ff5d5ee3360d99b"
@@ -1186,7 +1229,7 @@
     "@material/theme" "14.0.0-canary.261f2db59.0"
     tslib "^2.1.0"
 
-"@material/theme@14.0.0-canary.261f2db59.0":
+"@material/theme@14.0.0-canary.261f2db59.0", "@material/theme@=14.0.0-canary.261f2db59.0":
   version "14.0.0-canary.261f2db59.0"
   resolved "https://registry.npmjs.org/@material/theme/-/theme-14.0.0-canary.261f2db59.0.tgz"
   integrity sha512-bUqyFT0QF8Nxx02fekt3CXIfC9DEPOPdo2hjgdtvhrNP+vftbkI2tKZ5/uRUnVA+zqQAOyIl5z6FOMg4fyemCA==
