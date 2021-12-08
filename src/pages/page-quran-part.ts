@@ -134,9 +134,11 @@ export class PageQuranPart extends PageElement {
                         @click="${this.translation}"
                         @keyup="${this.translation}"
                       >
-                        <div class="part-text fa">${part.text} ﴿${index + 1}﴾</div>
+                        <div class="part-text fa">
+                          ${part.text} ﴿${index + 1}﴾
+                        </div>
                         <div class="part-translation">
-                          ${part.translation} (${index + 1}) 
+                          ${part.translation} (${index + 1})
                         </div>
                       </div>
                     `
