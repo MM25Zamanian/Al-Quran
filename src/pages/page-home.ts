@@ -94,8 +94,7 @@ export class PageHome extends PageElement {
 
   meta() {
     return {
-      title: config.appName,
-      titleTemplate: null,
+      title: 'خانه',
       description: config.appDescription,
     };
   }

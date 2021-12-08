@@ -31,6 +31,7 @@ export const updateMeta = (options: MetaOptions) => {
       : title;
 
     document.title = finalTitle;
+    document.querySelector('app-index')?.setAttribute('app_title', finalTitle);
     setMetaTag('property', 'og:title', finalTitle);
   }
 

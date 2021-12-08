@@ -18,7 +18,7 @@ export class PageElement extends LitElement {
   @state()
   protected location?: RouterLocation;
 
-  private defaultTitleTemplate = `%s | ${config.appName}`;
+  private defaultTitleTemplate = `%s - ${config.appName}`;
 
   protected get defaultMeta() {
     return {

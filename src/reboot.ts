@@ -8,8 +8,12 @@ export default css`
     outline: none;
     -webkit-tap-highlight-color: transparent;
   }
-  *:not(mwc-*) {
-    font-family: 'Roboto Light', 'Samim', sans-serif;
+  *:not(mwc-icon) {
+    font-family: 'Samim Normal', 'Samim FD', sans-serif;
+  }
+  .fa,
+  .fa * {
+    font-family: 'Samim FD', sans-serif;
   }
   p {
     margin-top: 0;
@@ -69,22 +73,5 @@ export default css`
 
   h6 {
     font-size: 1rem;
-  }
-
-  @font-face {
-    font-family: 'Roboto Light';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url('/fonts/Roboto-Light.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Samim';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url('/fonts/Samim.woff') format('woff'),
-      url('/fonts/Samim.ttf') format('truetype');
   }
 `;
