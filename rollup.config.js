@@ -25,8 +25,8 @@ const workboxConfig = {
   sourcemap: false,
   runtimeCaching: [
     {
-      urlPattern: new RegExp('^\\/images\\/.*$'),
-      handler: 'NetworkFirst',
+      urlPattern: new RegExp('\\/images\\/.*$'),
+      handler: 'CacheFirst',
       options: {
         cacheName: 'images',
         expiration: {
@@ -36,8 +36,8 @@ const workboxConfig = {
       },
     },
     {
-      urlPattern: new RegExp('^\\/fonts\\/.*$'),
-      handler: 'NetworkFirst',
+      urlPattern: new RegExp('\\/fonts\\/.*$'),
+      handler: 'CacheFirst',
       options: {
         cacheName: 'fonts',
         expiration: {
@@ -47,8 +47,8 @@ const workboxConfig = {
       },
     },
     {
-      urlPattern: new RegExp('^\\/api\\/.*$'),
-      handler: 'NetworkFirst',
+      urlPattern: new RegExp('\\/api\\/.*$'),
+      handler: 'StaleWhileRevalidate',
       options: {
         cacheName: 'api',
         expiration: {
