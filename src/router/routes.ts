@@ -22,6 +22,28 @@ export const routes: Route[] = [
     },
   },
   {
+    show: true,
+    path: '/about',
+    name: 'about',
+    icon: 'info',
+    label: 'درباره ما',
+    component: 'page-about',
+    action: async () => {
+      await import('../pages/page-about.js');
+    },
+  },
+  {
+    show: true,
+    path: '/settings',
+    name: 'settings',
+    icon: 'settings',
+    label: 'تنظیمات',
+    component: 'page-settings',
+    action: async () => {
+      await import('../pages/page-settings.js');
+    },
+  },
+  {
     show: false,
     path: '/quran/:id',
     name: 'quran_part',
@@ -33,14 +55,14 @@ export const routes: Route[] = [
     },
   },
   {
-    show: true,
-    path: '/about',
-    name: 'about',
-    icon: 'info',
-    label: 'درباره ما',
-    component: 'page-about',
+    show: false,
+    path: '/quran/q/:query',
+    name: 'quran_search',
+    icon: 'search',
+    label: 'جستجو',
+    component: 'page-quran-search',
     action: async () => {
-      await import('../pages/page-about.js');
+      await import('../pages/page-quran-search.js');
     },
   },
   {
