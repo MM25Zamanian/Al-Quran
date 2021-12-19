@@ -1,4 +1,7 @@
+import type { Button } from '@material/mwc-button/mwc-button.js';
+import type { Dialog } from '@material/mwc-dialog/mwc-dialog.js';
 import type { Drawer } from '@material/mwc-drawer/mwc-drawer.js';
+import type { TextField } from '@material/mwc-textfield/mwc-textfield.js';
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 
@@ -7,6 +10,7 @@ import rebootCss from '../reboot.js';
 import { attachRouter, router, urlForName } from '../router/index.js';
 import { routes } from '../router/routes.js';
 import type { Quran } from '../types/quran.js';
+import { colors } from '../utils/colors.js';
 
 import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
@@ -15,7 +19,10 @@ import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 
 import '@material/mwc-icon';
 import '@material/mwc-list';
+import '@material/mwc-button';
+import '@material/mwc-dialog';
 import '@material/mwc-drawer';
+import '@material/mwc-textfield';
 import '@material/mwc-icon-button';
 import '@material/mwc-top-app-bar-fixed';
 import '@material/mwc-circular-progress-four-color';
@@ -28,11 +35,20 @@ export class AppIndex extends LitElement {
   @query('mwc-drawer')
   protected drawer!: Drawer;
 
+  @query('mwc-dialog#search-dialog')
+  protected searchbox!: Dialog;
+
+  @query('mwc-dialog#search-dialog > mwc-textfield')
+  protected searchinput!: TextField;
+
+  @query('mwc-dialog#search-dialog > mwc-button')
+  protected searchbutton!: Button;
+
   @property()
-  private app_title = config.appName;
+  public app_title = config.appName;
 
   @property({ type: Boolean })
-  private loader = true;
+  public loader = true;
 
   @state()
   private location;
@@ -43,6 +59,26 @@ export class AppIndex extends LitElement {
   constructor() {
     super();
     this.location = router.location.pathname;
+
+    if (!window.localStorage.getItem('themeColor')) {
+      window.localStorage.setItem('themeColor', 'cyan');
+    }
+
+    if (!window.localStorage.getItem('fontSize')) {
+      window.localStorage.setItem('fontSize', '20');
+    }
+
+    (<HTMLElement>document.querySelector(':root')).style.setProperty(
+      '--mdc-theme-primary',
+      colors.filter(
+        (color) => color.color_name == window.localStorage.getItem('themeColor')
+      )[0].hexa
+    );
+
+    (<HTMLElement>document.querySelector(':root')).style.setProperty(
+      '--quran-fs',
+      window.localStorage.getItem('fontSize') + "px"
+    );
 
     window.addEventListener('load', () => {
       this.loader = false;
@@ -110,7 +146,7 @@ export class AppIndex extends LitElement {
                     graphic="avatar"
                     ?activated="${this.isActiveUrl(item.path)}"
                     ?selected="${this.isActiveUrl(item.path)}"
-                    @click="${() => router.render(item.path, true)}"
+                    @click="${() => this.routerRender(item.path)}"
                   >
                     <span>${item.label}</span>
                     <mwc-icon slot="graphic">${item.icon}</mwc-icon>
@@ -126,14 +162,10 @@ export class AppIndex extends LitElement {
                   twoline
                   graphic="avatar"
                   @click="${() =>
-                    router.render(
-                      urlForName('quran_part', { id: item.id }),
-                      true
+                    this.routerRender(
+                      urlForName('quran_part', { id: item.id })
                     )}"
                   ?activated="${this.isActiveUrl(
-                    urlForName('quran_part', { id: item.id })
-                  )}"
-                  ?selected="${this.isActiveUrl(
                     urlForName('quran_part', { id: item.id })
                   )}"
                 >
@@ -169,6 +201,7 @@ export class AppIndex extends LitElement {
               icon="menu"
             ></mwc-icon-button>
             <div slot="title">${this.app_title}</div>
+            </mwc-textfield>
             <mwc-circular-progress-four-color
               indeterminate
               slot="actionItems"
@@ -178,7 +211,24 @@ export class AppIndex extends LitElement {
           <main role="main"></main>
         </div>
       </mwc-drawer>
+      <mwc-dialog id="search-dialog" stacked heading="جستجو" @click="${() =>
+        (this.searchbox.open = true)}">
+        <mwc-textfield
+          id="search"
+          placeholder="جستجو"
+          required
+          >
+        </mwc-textfield>
+        <mwc-button raised label="جستجو" slot="primaryAction"></mwc-button>
+      </mwc-dialog>
     `;
+  }
+
+  protected async routerRender(path: string) {
+    this.loader = true;
+    this.drawer.open = false;
+    await router.render(path, true);
+    this.loader = false;
   }
 
   async firstUpdated() {
