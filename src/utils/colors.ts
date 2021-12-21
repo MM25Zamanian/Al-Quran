@@ -14,7 +14,6 @@ import {
   purple_600,
   red_600,
   teal_500,
-  yellow_800,
 } from '../colors.js';
 import type { Color } from '../types/color.js';
 

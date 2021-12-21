@@ -77,7 +77,7 @@ export class AppIndex extends LitElement {
 
     (<HTMLElement>document.querySelector(':root')).style.setProperty(
       '--quran-fs',
-      window.localStorage.getItem('fontSize') + "px"
+      window.localStorage.getItem('fontSize') + 'px'
     );
 
     window.addEventListener('load', () => {
@@ -125,6 +125,29 @@ export class AppIndex extends LitElement {
         margin-bottom: 4px;
       }
     `,
+    css`
+      .desktop-forbidden {
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: 100vh;
+        z-index: 64;
+        background-color: var(--mdc-theme-primary);
+      }
+      .desktop-forbidden .title {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 900;
+        transition: text-shadow 300ms ease;
+      }
+      @media (orientation: portrait) {
+        .desktop-forbidden {
+          display: none;
+        }
+      }
+    `,
   ];
 
   public isActiveUrl(path: string) {
@@ -133,6 +156,9 @@ export class AppIndex extends LitElement {
 
   render() {
     return html`
+      <div class="desktop-forbidden">
+        <span class="title">متاسفانه این اپلیکیشن فقط برای دستگاه های تلفن همراه میباشید</span>
+      </div>
       <mwc-drawer hasHeader type="modal">
         <span slot="title">${config.appName}</span>
         <span slot="subtitle">${config.appDescription}</span>

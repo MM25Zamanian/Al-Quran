@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "rimraf server/dist/ && rollup --config",
+    "clear": "clear",
     "format": "npm-run-all format:*",
     "format:eslint": "yarn lint:eslint -- --fix",
     "format:prettier": "prettier . --ignore-path .gitignore --write",
@@ -29,8 +30,7 @@
     "test": "echo NO TESTS",
     "types:check": "npm-run-all --parallel types:check:*",
     "types:check:lit-analyzer": "lit-analyzer src/{components,pages}/**/*.ts --strict",
-    "types:check:tsc": "tsc --noEmit",
-    "clear":"clear"
+    "types:check:tsc": "tsc --noEmit"
   },
   "dependencies": {
     "@material/mwc-button": "^0.25.3",
