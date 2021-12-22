@@ -7,121 +7,106 @@ LICENSE file in the root directory of this source tree.
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>MyApplication</title>
-    <meta name="description" content="MyApplication description" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <base href="/" />
+  <title>MyApplication</title>
+  <meta name="description" content="MyApplication description" />
 
-    <link rel="icon" href="images/favicon.ico" />
+  <base href="/" />
 
-    <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="images/favicon.ico" />
 
-    <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.webmanifest" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="MyApplication" />
+  <meta name="theme-color" content="#000000" />
 
-    <link rel="apple-touch-icon" href="images/manifest/icon-192x192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="MyApplication" />
 
-    <link rel="canonical" href="/" />
+  <link rel="apple-touch-icon" href="images/manifest/icon-192x192.png" />
 
-    <meta property="og:title" content="MyApplication" />
-    <meta property="og:description" content="MyApplication description" />
-    <meta property="og:image" content="/images/open-graph/cover.png" />
-    <meta property="og:image:alt" content="MyApplication logo" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:url" content="/" />
+  <link rel="canonical" href="/" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta property="og:title" content="MyApplication" />
+  <meta property="og:description" content="MyApplication description" />
+  <meta property="og:image" content="/images/open-graph/cover.png" />
+  <meta property="og:image:alt" content="MyApplication logo" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:url" content="/" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons+Round&display=block"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round&display=block" rel="stylesheet" />
 
-    <style>
-      html,
-      body,
-      app-index {
-        height: 100%;
-      }
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+    media="print" onload="this.media='all'" />
 
-      body {
-        margin: 0;
-        font-family: 'Samim Normal', 'Samim FD', sans-serif;
-      }
+  <style>
+    html,
+    body,
+    app-index {
+      height: 100%;
+    }
 
-      noscript {
-        display: block;
-        margin: 1em;
-      }
+    body {
+      margin: 0;
+      font-family: 'Samim Normal', 'Samim FD', sans-serif;
+    }
 
-      :root {
-        --mdc-theme-primary: #127e3b;
-        --mdc-theme-on-primary: #ffffff;
-        --mdc-icon-font: 'Material Icons Round';
-        --mdc-typography-font-family: 'Samim Normal', 'Samim FD', sans-serif;
+    noscript {
+      display: block;
+      margin: 1em;
+    }
 
-        --mdc-circular-progress-bar: #ffffff;
+    :root {
+      --mdc-theme-primary: #127e3b;
+      --mdc-theme-on-primary: #ffffff;
+      --mdc-icon-font: 'Material Icons Round';
+      --mdc-typography-font-family: 'Samim Normal', 'Samim FD', sans-serif;
 
-        --mdc-circular-progress-bar-color-1: var(--mdc-circular-progress-bar);
-        --mdc-circular-progress-bar-color-2: var(--mdc-circular-progress-bar);
-        --mdc-circular-progress-bar-color-3: var(--mdc-circular-progress-bar);
-        --mdc-circular-progress-bar-color-4: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar: #ffffff;
 
-        --quran-fs: 20px;
-      }
+      --mdc-circular-progress-bar-color-1: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-2: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-3: var(--mdc-circular-progress-bar);
+      --mdc-circular-progress-bar-color-4: var(--mdc-circular-progress-bar);
 
-      @font-face {
-        font-family: 'Samim Normal';
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: url('/fonts/Samim.woff') format('woff');
-      }
+      --quran-fs: 20px;
+    }
 
-      @font-face {
-        font-family: 'Samim FD';
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: url('/fonts/Samim-FD.woff') format('woff');
-      }
-    </style>
-  </head>
+    @font-face {
+      font-family: 'Samim Normal';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('/fonts/Samim.woff') format('woff');
+    }
 
-  <body>
-    <app-index></app-index>
+    @font-face {
+      font-family: 'Samim FD';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('/fonts/Samim-FD.woff') format('woff');
+    }
+  </style>
+</head>
 
-    <noscript>Please enable JavaScript to view this website.</noscript>
+<body>
+  <app-index></app-index>
 
-    <script type="module" src="src/components/app-index.ts"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+  <noscript>Please enable JavaScript to view this website.</noscript>
+
+  <script type="module" src="src/components/app-index.ts"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>

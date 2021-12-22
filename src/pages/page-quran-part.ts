@@ -16,13 +16,6 @@ export class PageQuranPart extends PageElement {
         padding: 1rem;
       }
 
-      .load,
-      .load * {
-        background-color: #929292 !important;
-        border-radius: 4px !important;
-        color: #929292 !important;
-      }
-
       .list {
         display: flex;
         flex-direction: column;
@@ -59,35 +52,84 @@ export class PageQuranPart extends PageElement {
       .parts {
         display: flex;
         flex-direction: column;
-        margin-top: 2rem;
+        margin-top: 2em;
         align-items: center;
+        font-size: var(--quran-fs);
       }
       .parts > .part {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem 0.25rem;
+        padding: 0.5em 0.25em 0;
       }
       .parts > .part > .part-text,
       .parts > .part > .part-translation {
-        text-align: center;
-      }
-      .parts > .part > .part-text {
-        font-size: 1.2rem;
-        font-weight: 100;
-        color: #000;
-      }
-      .parts > .part > .part-translation {
-        font-size: 1rem;
-        font-weight: 900;
-        color: #005a56;
-      }
-      .parts > .part.selected > .part-text,
-      .parts > .part > .part-translation {
-        display: none;
-      }
-      .parts > .part > .part-text,
-      .parts > .part.selected > .part-translation {
         display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: 100;
+        position: relative;
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out, opacity 150ms 100ms ease-in;
+      }
+
+      .parts > .part > .part-text {
+        color: #000;
+        margin-bottom: 6px;
+      }
+      .parts > .part > .part-translation {
+        color: var(--mdc-theme-primary, #334);
+        padding: 0 5px;
+      }
+      .parts > .part > .part-translation:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--mdc-theme-primary, #334);
+        opacity: 0.15;
+        border-radius: 4px;
+      }
+      .parts > .part > .part-translation {
+        max-height: 0;
+        opacity: 0;
+      }
+      .parts > .part.selected > .part-translation {
+        max-height: 5em;
+        opacity: 1;
+      }
+    `,
+    css`
+      .title.load {
+        background-color: #abbbb0 !important;
+        color: #abbbb0 !important;
+        border-radius: 4px !important;
+      }
+
+      .load.list {
+        border: none !important;
+        margin-top: 1em !important;
+      }
+
+      .load .list-item {
+        padding: 0.25em !important;
+        border: none !important;
+      }
+
+      .load .list-item .list-item-name,
+      .load .list-item .list-item-value,
+      .load .part {
+        padding: 0.75em !important;
+        margin: 0.25em !important;
+        border: none !important;
+        background-color: #abbbb0 !important;
+        color: #abbbb0 !important;
+        border-radius: 4px !important;
+      }
+      .load .part {
+        width: 100%;
+        padding: 1em !important;
+        margin: 0.35em 0 !important;
       }
     `,
   ];
@@ -135,7 +177,7 @@ export class PageQuranPart extends PageElement {
                         @keyup="${this.translation}"
                       >
                         <div class="part-text fa">
-                          ${part.text} ﴿${index + 1}﴾
+                          ${part.text} (${index + 1})
                         </div>
                         <div class="part-translation">
                           ${part.translation} (${index + 1})
@@ -148,26 +190,19 @@ export class PageQuranPart extends PageElement {
           : html`
               <h2 class="title load">|</h2>
               <div class="list fa load">
-                <div class="list-item">
-                  <div class="list-item-name">نوع</div>
-                  <div class="list-item-value">|</div>
-                </div>
-                <div class="list-item">
-                  <div class="list-item-name">جزء</div>
-                  <div class="list-item-value">|</div>
-                </div>
-                <div class="list-item">
-                  <div class="list-item-name">تعداد آیه</div>
-                  <div class="list-item-value">|</div>
-                </div>
-                <div class="list-item">
-                  <div class="list-item-name">تعداد کلمه</div>
-                  <div class="list-item-value">|</div>
-                </div>
-                <div class="list-item">
-                  <div class="list-item-name">تعداد حرف</div>
-                  <div class="list-item-value">|</div>
-                </div>
+                ${Array.from({ length: 6 }, (_v, i) => i).map(
+                  () => html`
+                    <div class="list-item">
+                      <div class="list-item-name"></div>
+                      <div class="list-item-value"></div>
+                    </div>
+                  `
+                )}
+              </div>
+              <div class="parts load">
+                ${Array.from({ length: 10 }, (_v, i) => i).map(
+                  () => html` <div class="part"></div> `
+                )}
               </div>
             `}
       </section>
@@ -175,8 +210,6 @@ export class PageQuranPart extends PageElement {
   }
 
   async firstUpdated() {
-    console.log(router.location.params.id);
-
     await fetch('/api/quran.json')
       .then((response) => response.json())
       .then((data: Quran[]) => {
@@ -192,11 +225,11 @@ export class PageQuranPart extends PageElement {
     if (!elem.classList.contains('selected')) {
       elem.classList.add('selected');
 
-      setTimeout(() => {
-        if (elem.classList.contains('selected')) {
-          elem.classList.remove('selected');
-        }
-      }, 5000);
+      // setTimeout(() => {
+      //   if (elem.classList.contains('selected')) {
+      //     elem.classList.remove('selected');
+      //   }
+      // }, 5000);
     } else {
       elem.classList.remove('selected');
     }
