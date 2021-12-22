@@ -69,7 +69,7 @@ export class PageQuranPart extends PageElement {
         font-weight: 100;
         position: relative;
         overflow: hidden;
-        transition: max-height 500ms ease, opacity 300ms ease-in-out;
+        transition: max-height 400ms ease-in-out, opacity 150ms 100ms ease-in;
       }
 
       .parts > .part > .part-text {
@@ -95,7 +95,7 @@ export class PageQuranPart extends PageElement {
         opacity: 0;
       }
       .parts > .part.selected > .part-translation {
-        max-height: 150px;
+        max-height: 5em;
         opacity: 1;
       }
     `,
@@ -177,7 +177,7 @@ export class PageQuranPart extends PageElement {
                         @keyup="${this.translation}"
                       >
                         <div class="part-text fa">
-                          ${part.text} ﴿${index + 1}﴾
+                          ${part.text} (${index + 1})
                         </div>
                         <div class="part-translation">
                           ${part.translation} (${index + 1})
@@ -210,8 +210,6 @@ export class PageQuranPart extends PageElement {
   }
 
   async firstUpdated() {
-    console.log(router.location.params.id);
-
     await fetch('/api/quran.json')
       .then((response) => response.json())
       .then((data: Quran[]) => {
