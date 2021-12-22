@@ -1299,6 +1299,16 @@
     lit "^2.0.0"
     tslib "^2.0.1"
 
+"@material/mwc-snackbar@^0.25.3":
+  version "0.25.3"
+  resolved "https://registry.yarnpkg.com/@material/mwc-snackbar/-/mwc-snackbar-0.25.3.tgz#8031de833765cfb9c8d6cc0f39fd7359d1e66203"
+  integrity sha512-DJyWQl1rksv502qLQta81YQ3q3iy0GlVQcXZq88nBG9o64070qZW92rfZmiQ63MRwGbdNmrUFZ3QBoClY1JpFg==
+  dependencies:
+    "@material/mwc-base" "^0.25.3"
+    "@material/snackbar" "=14.0.0-canary.261f2db59.0"
+    lit "^2.0.0"
+    tslib "^2.0.1"
+
 "@material/mwc-textfield@^0.25.3":
   version "0.25.3"
   resolved "https://registry.yarnpkg.com/@material/mwc-textfield/-/mwc-textfield-0.25.3.tgz#651389a92d0d29f1b7ed7e252129314eadcfae3e"
@@ -1412,6 +1422,25 @@
     "@material/feature-targeting" "14.0.0-canary.261f2db59.0"
     "@material/ripple" "14.0.0-canary.261f2db59.0"
     "@material/rtl" "14.0.0-canary.261f2db59.0"
+    "@material/theme" "14.0.0-canary.261f2db59.0"
+    "@material/typography" "14.0.0-canary.261f2db59.0"
+    tslib "^2.1.0"
+
+"@material/snackbar@=14.0.0-canary.261f2db59.0":
+  version "14.0.0-canary.261f2db59.0"
+  resolved "https://registry.yarnpkg.com/@material/snackbar/-/snackbar-14.0.0-canary.261f2db59.0.tgz#c33ce965fe6c0ce92b4451b7edaa3212b3866c88"
+  integrity sha512-RLxO0dWBmhU+3y/PCYN0oiQUvzw8cdeFLmiUN9BPn2unwmTPp5nUdaTde7TQ93vRNidyPtDnkEFnflunDCk2Ew==
+  dependencies:
+    "@material/animation" "14.0.0-canary.261f2db59.0"
+    "@material/base" "14.0.0-canary.261f2db59.0"
+    "@material/button" "14.0.0-canary.261f2db59.0"
+    "@material/dom" "14.0.0-canary.261f2db59.0"
+    "@material/elevation" "14.0.0-canary.261f2db59.0"
+    "@material/feature-targeting" "14.0.0-canary.261f2db59.0"
+    "@material/icon-button" "14.0.0-canary.261f2db59.0"
+    "@material/ripple" "14.0.0-canary.261f2db59.0"
+    "@material/rtl" "14.0.0-canary.261f2db59.0"
+    "@material/shape" "14.0.0-canary.261f2db59.0"
     "@material/theme" "14.0.0-canary.261f2db59.0"
     "@material/typography" "14.0.0-canary.261f2db59.0"
     tslib "^2.1.0"
