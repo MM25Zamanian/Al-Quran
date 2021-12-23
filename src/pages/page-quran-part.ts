@@ -1,11 +1,15 @@
+import type { Snackbar } from '@material/mwc-snackbar';
 import { html, css, unsafeCSS } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { customElement, query, state } from 'lit/decorators.js';
 
 import config from '../config.js';
 import { PageElement } from '../helpers/page-element.js';
 import rebootCss from '../reboot.js';
 import { router } from '../router/index.js';
 import type { Quran } from '../types/quran.js';
+
+import '@material/mwc-snackbar';
+import '@material/mwc-icon-button';
 
 @customElement('page-quran-part')
 export class PageQuranPart extends PageElement {
@@ -137,6 +141,9 @@ export class PageQuranPart extends PageElement {
   @state()
   protected _part: Quran | undefined = undefined;
 
+  @query('mwc-snackbar#err_snack')
+  protected err_snack!: Snackbar;
+
   render() {
     return html`
       <section>
@@ -206,6 +213,12 @@ export class PageQuranPart extends PageElement {
               </div>
             `}
       </section>
+      <mwc-snackbar
+        id="err_snack"
+        labelText="مشکلی در دریافت اطلاعات بوجود آمده"
+      >
+        <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+      </mwc-snackbar>
     `;
   }
 
@@ -216,6 +229,10 @@ export class PageQuranPart extends PageElement {
         this._part = data.filter(
           (item) => item.id === router.location.params.id
         )[0];
+      })
+      .catch((err) => {
+        console.error(err);
+        this.err_snack.open = true;
       });
   }
 
